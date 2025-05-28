@@ -9,6 +9,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.violet.botanicalmenagerie.BotanicalMenagerie;
+import net.violet.botanicalmenagerie.item.custom.ChiselItem;
 
 import java.util.function.Function;
 
@@ -16,6 +17,8 @@ import java.util.function.Function;
 public class ModItems {
 
     public static final Item GOLEM_CORE = registerItem("golem_core", Item:: new);
+
+    public static final Item CHISEL = registerItem("chisel", settings -> new ChiselItem(settings));
 
     private static Item registerItem(String name, Function<Item.Settings, Item> function) {
         return Registry.register(Registries.ITEM, Identifier.of(BotanicalMenagerie.MOD_ID, name),

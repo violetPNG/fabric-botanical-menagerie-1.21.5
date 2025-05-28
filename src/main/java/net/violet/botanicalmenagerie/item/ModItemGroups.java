@@ -16,6 +16,8 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.botanical_menagerie.botanical_menagerie"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.GOLEM_CORE);
+
+                        entries.add(ModItems.CHISEL);
                     }).build());
 
 
