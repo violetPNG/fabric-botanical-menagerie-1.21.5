@@ -2,6 +2,7 @@ package net.violet.botanicalmenagerie;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.violet.botanicalmenagerie.item.ModItemGroups;
 import net.violet.botanicalmenagerie.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +13,7 @@ public class BotanicalMenagerie implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 	}
 }
