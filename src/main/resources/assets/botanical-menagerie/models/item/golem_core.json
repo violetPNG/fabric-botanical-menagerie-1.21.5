@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "BotanicalMenagerie:item/golem_core"
+    "layer0": "botanical-menagerie:item/golem_core"
   }
 }

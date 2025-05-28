@@ -10,13 +10,16 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.violet.botanicalmenagerie.BotanicalMenagerie;
 
+import java.util.function.Function;
+
 
 public class ModItems {
 
-    public static final Item GOLEM_CORE = registerItem("golem_core", new Item(new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(BotanicalMenagerie.MOD_ID,"golem_core")))));
+    public static final Item GOLEM_CORE = registerItem("golem_core", Item:: new);
 
-    private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, Identifier.of(BotanicalMenagerie.MOD_ID, name), item);
+    private static Item registerItem(String name, Function<Item.Settings, Item> function) {
+        return Registry.register(Registries.ITEM, Identifier.of(BotanicalMenagerie.MOD_ID, name),
+                function.apply(new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(BotanicalMenagerie.MOD_ID, name)))));
     }
 
     public static void registerModItems() {
